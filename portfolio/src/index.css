@@ -1,4 +1,8 @@
 body {
+  display: flex;
+  flex-direction: column;
+  background-color: #fefae0;
+  min-height: 100vh;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -7,7 +11,323 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.page-content h1 {
+  color: #bc6c25;
+  text-align: center;
+  align-content: center;
+  font-size: 14px;
+}
+
+h2 {
+  text-align: justify;
+  margin: 1rem;
+  align-content: center;
+  font-size: 14px;
+}
+
+.page-content p {
+  color: #283618;
+  text-align: center;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #283618;
+  color: white;
+  padding: 10px;
+  height: 50px;
+}
+
+.main-container {
+  height: calc(90vh - 50px);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+}
+
+.social-icons a {
+  color: #283618;
+  margin-right: 10px;
+}
+
+.body-content {
+  margin-top: 20px;
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fefae0;
+  color: #606c38;
+  padding: 10px;
+  height: calc(10vh - 50px);
+  overflow-y: auto;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Buttons on the page */
+.btn {
+
+  justify-content: center;
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: #283618;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+/* button in the header, navbar */
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Photo and pictures */
+
+.photo {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  margin: 1rem auto;
+}
+
+/* Contact form  */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #283618;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #bc6c25;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 8px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+.submit-button {
+  background-color: #9fa1a3;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 2rem;
+    font-size: 18px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Navbar */
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  /* Add some padding */
+  background-color: #283618;
+  /* Add a background color */
+  box-shadow: 0px 2px 4px #fefae0(0, 0, 0, 0.1);
+  /* Add a shadow */
+}
+
+.logo h1 {
+  margin: 0;
+  color: #fefae0;
+  text-decoration: none;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fefae0;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  /* Adjust this value based on your header height */
+  right: 20px;
+  background-color: #283618;
+  border: 1px solid #fefae0;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 160px;
+}
+
+.nav-links a {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #fefae0;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .bar1.open {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .bar2.open {
+    opacity: 0;
+  }
+
+  .bar3.open {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
+
+/* Default styles for all screen sizes */
+
+/* Adjust layout for screens smaller than 768px */
+@media (min-width: 768px) {
+
+  .photo {
+    display: flex;
+    justify-content: center;
+    object-fit: contain;
+    max-width: 50%;
+    margin: 1rem auto;
+  }
+
+  .btn .button-container {
+    display: none;
+  }
+
+  .main-container {
+    height: calc(90vh - 50px);
+    overflow-y: auto;
+  }
+
+  .contact-form {
+    padding: 50px;
+    font-size: 20px;
+  }
+
+
+  .form-group input,
+  .form-group textarea {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+
+  .submit-button {
+    text-align: center;
+  }
+
+  .page-content {
+    margin: 1rem 18rem;
+  }
+
+  .page-content h1 {
+    font-size: 24px;
+  }
+
+  .page-content h2 {
+    font-size: 16px;
+  }
+
+  .page-content p {
+    font-size: 14px;
+  }
+
 }

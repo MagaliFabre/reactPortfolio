@@ -1,32 +1,40 @@
 import React, { useState } from 'react';
 import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
-  let [count, setCount] = useState(0)
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <nav>
-      {/* add div and buttons, class for buttons */}
-      <div>
-        <button>
 
-        </button>
+<div className="logo">
+        <Link to="/">
+          <h1>Magali Fabre</h1>
+        </Link>
       </div>
-      {count === 3 ? 'three' : ''}
-      {count}
-      <button 
-        onClick={() => setCount(count+1)}
-      > 
-        Increment </button>
-      <div className="social-icons">
-        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
-          <FaGithub />
-        </a>
-        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
-          <FaTwitter />
-        </a>
-        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
-          <FaLinkedin />
-        </a>
+      <div className="navbar-container">
+        
+        <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
+          <Link to="/about" className="nav-link">
+            About
+          </Link>
+          <Link to="/contact" className="nav-link">
+            Contact
+          </Link>
+          <Link to="/resume" className="nav-link">
+            Resume
+          </Link>
+        </div>
+        <div className="menu-toggle" onClick={toggleMenu}>
+          <div className={`bar ${menuOpen ? 'open' : ''}`} />
+          <div className={`bar ${menuOpen ? 'open' : ''}`} />
+          <div className={`bar ${menuOpen ? 'open' : ''}`} />
+        </div>
       </div>
     </nav>
   );
